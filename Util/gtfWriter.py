@@ -26,6 +26,11 @@ class GtfWriter:
         features = gtfFindFunctions.find_bio_type(self.__originPath)
         self.write_feature(features, destination)
 
+    # write all bio_type of the file in the other file
+    def write_protein(self, destination):
+        features = gtfFindFunctions.find_protein(self.__originPath)
+        self.write_feature(features, destination)
+
     # method that open the file and really write in the file
     def write_feature(self, features, filePath):
         file = open(filePath, 'a')

@@ -45,13 +45,13 @@ from gtfparse import read_gtf
 # # ar = df_gene.__array__()
 #
 
-# from Util.gtfWriter import GtfWriter
+from Util.gtfWriter import GtfWriter
 #
-# gt = GtfWriter('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf')
-# gt.write_source('C:/Users/breno/Desktop/source.txt')
+gt = GtfWriter('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf')
+gt.write_protein('C:/Users/breno/Desktop/protein.txt')
 
-from CONTROLLER.InsertController import InsertController
-
-insertion = InsertController()
-
-insertion.insert_source('C:/Users/breno/Desktop/source.txt')
+# from CONTROLLER.InsertController import InsertController
+#
+# insertion = InsertController()
+#
+# insertion.insert_source('C:/Users/breno/Desktop/source.txt')
