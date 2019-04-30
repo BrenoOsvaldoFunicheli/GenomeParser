@@ -39,11 +39,3 @@ class gtfFindFunctions:
         source_array = df["gene_biotype"].__array__()
         return set(source_array)
 
-    @staticmethod
-    def find_protein(filePath):
-        # open the file
-        df = read_gtf(filePath)
-        # filter of info based in the columns
-        # translate a DateFrame in array for manipulation
-        source_array = df["protein"].__array__()
-        return set(source_array)
