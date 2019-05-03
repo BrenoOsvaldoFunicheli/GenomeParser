@@ -54,5 +54,6 @@
     # set attribute --> permite ao usuário modificar atributos comuns
 
 
+    # descritores de arquivos --> valores retornados quando o arquivo é aberto
 
-
+    
