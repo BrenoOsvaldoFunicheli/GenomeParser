@@ -20,35 +20,35 @@ intermediate.close()
 
 #attr standard of the files GTF
 
-# seqname = df_genes['seqname']
-# source = df_genes['source']
-# feature = df_genes['feature'] translate in tables
-# start = df_genes['start']
-# end = df_genes['end']
-# score = df_genes['score']
-# strand = df_genes['strand']
-# frame = df_genes['frame']
+# seqname = df_genes['seqname'] --> 0
+# source = df_genes['source'] --> 1
+# feature = df_genes['feature'] translate in tables-->2
+# start = df_genes['start'] -->3
+# end = df_genes['end'] -->4
+# score = df_genes['score'] -->5
+# strand = df_genes['strand'] -->6
+# frame = df_genes['frame'] -->7
 
 # other attributes caracteristic of the file
 
-# gene_id = df_genes['gene_id'].__array__()
-# gene_version = df_genes['gene_version'].__array__()
-# gene_name = df_genes['gene_name'].__array__()
-# gene_source = df_genes['gene_source'].__array__()
-# gene_biotype = df_genes['gene_biotype'].__array__()
-# transcript_id = df_genes['transcript_id'].__array__()
-# transcript_version = df_genes['transcript_version'].__array__()
-# transcript_name = df_genes['transcript_name'].__array__()
-# transcript_source = df_genes['transcript_source'].__array__()
-# transcript_biotype = df_genes['transcript_biotype'].__array__()
-# tag = df_genes['tag'].__array__()
-# transcript_support_level = df_genes['transcript_support_level'].__array__()
-# exon_number = df_genes['exon_number'].__array__()
-# exon_id = df_genes['exon_id'].__array__()
-# exon_version = df_genes['exon_version'].__array__()
-# ccds_id = df_genes['ccds_id'].__array__()
-# protein_id = df_genes['protein_id'].__array__()
-# protein_version = df_genes['protein_version'].__array__()
+# gene_id = df_genes['gene_id'].__array__()  8
+# gene_version = df_genes['gene_version'].__array__() 9
+# gene_name = df_genes['gene_name'].__array__() 10
+# gene_source = df_genes['gene_source'].__array__() 11
+# gene_biotype = df_genes['gene_biotype'].__array__() 12
+# transcript_id = df_genes['transcript_id'].__array__() 13
+# transcript_version = df_genes['transcript_version'].__array__() 14
+# transcript_name = df_genes['transcript_name'].__array__() 15
+# transcript_source = df_genes['transcript_source'].__array__() 16
+# transcript_biotype = df_genes['transcript_biotype'].__array__() 17
+# tag = df_genes['tag'].__array__() 18
+# transcript_support_level = df_genes['transcript_support_level'].__array__() 19
+# exon_number = df_genes['exon_number'].__array__() 20
+# exon_id = df_genes['exon_id'].__array__() 21
+# exon_version = df_genes['exon_version'].__array__() 22
+# ccds_id = df_genes['ccds_id'].__array__() 23
+# protein_id = df_genes['protein_id'].__array__() 24
+# protein_version = df_genes['protein_version'].__array__() 25
 
 '''
 genes = df_genes[df_genes["feature"] == "gene"]

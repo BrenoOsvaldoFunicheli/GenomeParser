@@ -10,7 +10,7 @@ class ProteinDAO:
     def insert(self, value):
         try:
             cursor = self.con.cursor()
-            query = """ INSERT INTO tb_biotype (protein_name) VALUES (\'"""+value+"""\')"""
+            query = """INSERT INTO tb_biotype (protein_name) VALUES (%s)"""
             cursor.execute(query, value)
 
             self.con.commit()

@@ -44,14 +44,35 @@ from gtfparse import read_gtf
 # #
 # # ar = df_gene.__array__()
 #
-
-from Util.gtfWriter import GtfWriter
 #
-gt = GtfWriter('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf')
-gt.write_protein('C:/Users/breno/Desktop/protein.txt')
+# from Util.gtfWriter import GtfWriter
+# #
+# gt = GtfWriter('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf')
+# gt.write_chromossome('C:/Users/breno/Desktop/seqNames.txt')
 
 # from CONTROLLER.InsertController import InsertController
 #
 # insertion = InsertController()
+# #
+# insertion.insert_chromossome('C:/Users/breno/Desktop/seqNames.txt')
+
+# from Util.gtfConvert import *
 #
-# insertion.insert_source('C:/Users/breno/Desktop/source.txt')
+# breno_parseGTF('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf', 'gene','C:/Users/breno/Desktop/protein.txt')
+#
+
+from Util.gtfParseByFeature import gtfParseByFeature
+#
+# var = gtfWriteFeature('C:/Users/breno/Desktop/intermediateParseD.gtf')
+# # var = gtfWriteFeature('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf')
+# var.parse_gene('C:/Users/breno/Desktop/intermediateParseA.txt')
+#
+
+gtf = gtfParseByFeature('C:/Users/breno/Desktop/intermediateParseD.gtf')
+# gtf = gtfParseByFeature('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf')
+gtf.parse_gene('C:/Users/breno/Desktop/intermediateParse.txt')
+# print(gtf.seq_id_convert('1'))
+#
+# from Util.gtfConvert import GTF_to_text
+#
+# GTF_to_text('C:/Users/breno/Desktop/Homo_sapiens.GRCh38.91.gtf')

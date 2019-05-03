@@ -2,6 +2,7 @@
 from DAO.SourceDAO import SourceDAO
 from DAO.BioTypeDAO import BioTypeDAO
 from DAO.ProteinDAO import ProteinDAO
+from DAO.ChromossomeDAO import ChromossomeDAO
 
 
 class InsertController:
@@ -30,4 +31,9 @@ class InsertController:
             dao.insert(x)
         var.close()
 
-
+    def insert_chromossome(self, filePath):
+        dao = ChromossomeDAO()
+        var = open(filePath)
+        for x in var.readlines():
+            dao.insert(1, x)
+        var.close()

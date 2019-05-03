@@ -5,6 +5,6 @@ class Connection:
 
     @staticmethod
     def get_connection():
-        con = psycopg2.connect(host='x', database='x', user='postgres', password='root')
+        con = psycopg2.connect(host='x', database='cbioportal', user='postgres', password='z')
 
         return con

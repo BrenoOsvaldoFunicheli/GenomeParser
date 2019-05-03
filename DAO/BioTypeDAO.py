@@ -24,3 +24,15 @@ class BioTypeDAO:
                 # cursor.close()
                 # con.close()
 
+    def get_all(self):
+        try:
+            cursor = self.con.cursor()
+            query = """ SELECT * FROM tb_biotype"""
+            cursor.execute(query)
+            result = cursor.fetchall()
+        finally:
+            # closing database connection.
+            cursor.close()
+            self.con.close()
+
+        return result

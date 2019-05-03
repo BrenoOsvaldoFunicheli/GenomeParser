@@ -1,7 +1,7 @@
 from Util.gtfFindFunctions import gtfFindFunctions
 
 
-class GtfWriter:
+class gtfWriterReferenceClass:
 
     def __init__(self, filePath):
         self.__originPath = filePath
@@ -29,6 +29,11 @@ class GtfWriter:
     # write all bio_type of the file in the other file
     def write_protein(self, destination):
         features = gtfFindFunctions.find_protein(self.__originPath)
+        self.write_feature(features, destination)
+
+    # write all bio_type of the file in the other file
+    def write_chromossome(self, destination):
+        features = gtfFindFunctions.find_chromossome(self.__originPath)
         self.write_feature(features, destination)
 
     # method that open the file and really write in the file

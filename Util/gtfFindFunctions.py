@@ -39,3 +39,20 @@ class gtfFindFunctions:
         source_array = df["gene_biotype"].__array__()
         return set(source_array)
 
+    @staticmethod
+    def find_chromossome(filePath):
+        # open the file
+        df = read_gtf(filePath)
+        # filter of info based in the columns
+        # translate a DateFrame in array for manipulation
+        source_array = df["seqname"].__array__()
+        return set(source_array)
+
+    @staticmethod
+    def find_gene(filePath):
+        # open the file
+        df = read_gtf(filePath)
+        # filter of info based in the columns
+        # translate a DateFrame in array for manipulation
+        source_array = df[df["feature"] == 'gene'].__array__()
+        return source_array
