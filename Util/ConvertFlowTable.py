@@ -1,7 +1,3 @@
-from DAO.ChromossomeDAO import ChromossomeDAO
-from DAO.BioTypeDAO import BioTypeDAO
-from DAO.SourceDAO import SourceDAO
-
 
 class ConvertFlowTable:
 

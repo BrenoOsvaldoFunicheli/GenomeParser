@@ -3,7 +3,7 @@ from DAO.SourceDAO import SourceDAO
 from DAO.BioTypeDAO import BioTypeDAO
 from DAO.ProteinDAO import ProteinDAO
 from DAO.ChromossomeDAO import ChromossomeDAO
-
+from DAO.GeneDAO import GeneDAO
 
 class InsertController:
 
@@ -36,4 +36,12 @@ class InsertController:
         var = open(filePath)
         for x in var.readlines():
             dao.insert(1, x)
+        var.close()
+
+    def insert_gene(self, filePath):
+        dao = GeneDAO()
+        var = open(filePath, 'r')
+        for x in var.readlines():
+            data = tuple(x.split('*')[0:10])
+            dao.insert(data)
         var.close()

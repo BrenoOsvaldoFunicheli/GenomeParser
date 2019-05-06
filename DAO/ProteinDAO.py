@@ -1,26 +1,16 @@
-from DAO.Connection import *
+from DAO.DAOUtil import DAOUtil
 
 
-class ProteinDAO:
+class ProteinDAO(DAOUtil):
     __slots__ = ['con']
 
     def __init__(self):
-        self.con = Connection.get_connection()
+        super().__init__()
 
-    def insert(self, value):
-        try:
-            cursor = self.con.cursor()
-            query = """INSERT INTO tb_biotype (protein_name) VALUES (%s)"""
-            cursor.execute(query, value)
+    def get_all(self):
+        query = """SELECT * FROM tb_protein"""
+        return super().get_all(query)
 
-            self.con.commit()
-
-            return cursor.rowcount
-
-        finally:
-            # closing database connection.
-            if self.con:
-                pass
-                # cursor.close()
-                # con.close()
-
+    def insert(self, data):
+        query = """INSERT INTO tb_biotype (protein_name) VALUES (%s)"""
+        super().insert(data, query)

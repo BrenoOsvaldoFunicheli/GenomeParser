@@ -11,7 +11,31 @@ class gtfParseByFeature:
         self.__originPath = filePath
 
     def parse_gene(self, destination, data=[]):
+        # get all the gene that exist on the file
         features = gtfFindFunctions.find_gene(self.__originPath)
+        # create the class for connection with database
+        chr = ChromossomeDAO().get_all()
+        bt = BioTypeDAO().get_all()
+        source = SourceDAO().get_all()
+
+        for i in features:
+            data.append([i[8],
+                         ConvertFlowTable.seq_id_convert(i[0], chr),
+                         ConvertFlowTable.bio_type_convert(i[12], bt),
+                         ConvertFlowTable.source_convert(i[11], source),
+                         i[3],
+                         i[4],
+                         i[5],
+                         i[6],
+                         i[9],
+                         i[10]])
+
+        self.write_feature(data, destination)
+
+    def parse_gene(self, destination, data=[]):
+        # get all the gene that exist on the file
+        features = gtfFindFunctions.find_gene(self.__originPath)
+        # create the class for connection with database
         chr = ChromossomeDAO().get_all()
         bt = BioTypeDAO().get_all()
         source = SourceDAO().get_all()
@@ -41,3 +65,4 @@ class gtfParseByFeature:
                 file.write('*')
             file.write('\n')
         file.close()
+

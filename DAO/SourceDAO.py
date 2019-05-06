@@ -1,37 +1,16 @@
-from DAO.Connection import *
+from DAO.DAOUtil import DAOUtil
 
 
-class SourceDAO:
+class SourceDAO(DAOUtil):
     __slots__ = ['con']
 
     def __init__(self):
-        self.con = Connection.get_connection()
-
-    def insert(self, value):
-        try:
-            cursor = self.con.cursor()
-            query = """ INSERT INTO tb_source (source_name) VALUES (\'""" + value + """\')"""
-            cursor.execute(query, value)
-
-            self.con.commit()
-
-            return cursor.rowcount
-
-        finally:
-            # closing database connection.
-            if self.con:
-                pass
-                # cursor.close()
-                # con.close()
+        super().__init__()
 
     def get_all(self):
-        try:
-            cursor = self.con.cursor()
-            query = """ SELECT * FROM tb_source"""
-            cursor.execute(query)
-            result = cursor.fetchall()
-        finally:
-            # closing database connection.
-            cursor.close()
-            self.con.close()
-        return result
+        query = """ SELECT * FROM tb_source"""
+        return super().get_all(query)
+
+    def insert(self, data):
+        query = """INSERT INTO tb_source (source_name) VALUES ($s)"""
+        super().insert(data, query)
