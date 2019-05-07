@@ -1,4 +1,3 @@
-
 class ConvertFlowTable:
 
     # return the id of the seqname based in value string

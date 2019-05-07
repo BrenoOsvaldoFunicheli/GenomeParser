@@ -13,15 +13,11 @@ class gtfWriterReferenceClass:
 
     # write all source of the file in the other file
     def write_source(self, destination):
-        features = gtfFindFunctions.find_source(self.__originPath)
-        self.write_feature(features, destination)
+        list = [gtfFindFunctions.find_general_source(self.__originPath), gtfFindFunctions.find_gene_source(self.__originPath), gtfFindFunctions.find_transcript_source(self.__originPath)]
+        for x in list:
+            self.write_feature(x, destination)
 
-    # write all gene_source of the file in the other file
-    def write_gene_source(self, destination):
-        features = gtfFindFunctions.find_gene_source(self.__originPath)
-        self.write_feature(features, destination)
-
-    # write all bio_type of the file in the other file
+    # write all bio_type of the origin_Path in the other file
     def write_bio_type(self, destination):
         features = gtfFindFunctions.find_bio_type(self.__originPath)
         self.write_feature(features, destination)

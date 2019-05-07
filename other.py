@@ -20,7 +20,7 @@ from gtfparse import read_gtf
 #
 # var = 'C:/Users/breno/Desktop/min.gtf'
 #
-# f = find_source(var)
+# f = find_general_source(var)
 # # var = open(file_Path, 'w')
 # #
 # df = read_gtf(var)

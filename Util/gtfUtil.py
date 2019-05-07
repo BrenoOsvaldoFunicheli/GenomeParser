@@ -17,7 +17,6 @@ def GTF_to_text_wtih_percent(path, percent):
     min_size.close()
     source.close()
 
-
 def GTF_to_text(path):
 
     source = open(path, 'r')
@@ -96,3 +95,4 @@ def get_features():
     feature_file.close()
     result = f[0].split(" ")
     return result
+

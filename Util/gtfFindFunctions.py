@@ -13,7 +13,7 @@ class gtfFindFunctions:
         return set(feature)
 
     @staticmethod
-    def find_source(filePath):
+    def find_general_source(filePath):
         # open the file
         df = read_gtf(filePath)
         # filter of info based in the columns
@@ -28,6 +28,15 @@ class gtfFindFunctions:
         # filter of info based in the columns
         # translate a DateFrame in array for manipulation
         source_array = df["gene_source"].__array__()
+        return set(source_array)
+
+    @staticmethod
+    def find_transcript_source(filePath):
+        # open the file
+        df = read_gtf(filePath)
+        # filter of info based in the columns
+        # translate a DateFrame in array for manipulation
+        source_array = df["transcript_source"].__array__()
         return set(source_array)
 
     @staticmethod

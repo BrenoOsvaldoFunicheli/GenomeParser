@@ -1,4 +1,4 @@
-from Util.gtfConvert import get_lines
+from Util.gtfUtil import get_lines
 
 Pa = get_lines('C:/Users/breno/Desktop/intermediateParseA.gtf')
 Pb = get_lines('C:/Users/breno/Desktop/intermediateParseB.gtf')
