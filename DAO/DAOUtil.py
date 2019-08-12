@@ -1,33 +1,20 @@
-from DAO.Connection import *
+import abc
 
 
-class DAOUtil:
-    __slots__ = ['con']
+class DAOUtil(abc.ABC):
 
     def __init__(self):
-        self.con = Connection.get_connection()
+        super().__init__()
 
-    # code that do insert into database in table seq_name
-    def insert(self, data, query):
-        try:
-            cursor = self.con.cursor()
-            cursor.execute(query, data)
-            self.con.commit()
-            return cursor.rowcount
+    @staticmethod
+    def save(self, json):
+        pass
 
-        finally:
-            if self.con:
-                pass
+    @staticmethod
+    def update(self, json):
+        pass
 
-    def get_all(self, query):
-        try:
-            cursor = self.con.cursor()
-            cursor.execute(query)
-            result = cursor.fetchall()
+    @staticmethod
+    def delete(self, json):
+        pass
 
-        finally:
-            # closing database connection.
-            cursor.close()
-            self.con.close()
-
-        return result

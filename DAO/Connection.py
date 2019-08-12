@@ -1,10 +1,16 @@
-import psycopg2
+import requests
 
 
 class Connection:
 
-    @staticmethod
-    def get_connection():
-        con = psycopg2.connect(host='x', database='cbioportal', user='postgres', password='root')
+    def __init__(self, user, password):
+        self.session = requests.Session()
+        self.session.auth = (user, password)
 
-        return con
+    def get_connection(self):
+        """
+
+        :return: Session object with authentication of user and password
+        """
+        return self.session
+
